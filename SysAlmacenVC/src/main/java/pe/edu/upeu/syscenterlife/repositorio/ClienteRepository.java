@@ -1,5 +1,5 @@
 
-package pe.edu.upeu.syscenterlife.modelo.repositorio;
+package pe.edu.upeu.syscenterlife.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

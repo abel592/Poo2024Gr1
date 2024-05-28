@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upeu.syscenterlife.modelo.Cliente;
-import pe.edu.upeu.syscenterlife.modelo.repositorio.ClienteRepository;
+import pe.edu.upeu.syscenterlife.repositorio.ClienteRepository;
 
 @Service
 public class ClienteService {
