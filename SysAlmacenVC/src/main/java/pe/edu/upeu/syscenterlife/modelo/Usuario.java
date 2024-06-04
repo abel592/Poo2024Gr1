@@ -40,8 +40,8 @@ public List<Venta> ventas;
 @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 @JsonIgnoreProperties({"idUsuario"})
 public List<CompCarrito> compCarritos;
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+/*@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 @JsonIgnoreProperties({"idUsuario"})
-public List<VentCarrito> ventCarritos;
+public List<VentCarrito> ventCarritos;*/
 }

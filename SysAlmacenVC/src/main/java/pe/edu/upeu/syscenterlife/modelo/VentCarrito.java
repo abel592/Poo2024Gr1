@@ -41,9 +41,9 @@ private double ptotal;
 @Basic(optional = false)
 @Column(name = "estado")
 private int estado;
-@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
+/*@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 @ManyToOne(optional = false)
 @JsonIgnoreProperties({"compras", "ventas", "compCarritos",
-"ventCarritos"})
-private Usuario idUsuario;
+"ventCarritos"})*/
+private Long idUsuario;
 }

@@ -35,4 +35,8 @@ public class VentCarritoService {
     public VentCarrito buscarEntidad(Long id){
         return repository.findById(id).orElse(null);
     }
+    //buscar por dni/ruc
+    public List<VentCarrito> listaCarritoCliente (String dni){
+        return repository.listaCarritoCliente(dni);
+    }
 }
