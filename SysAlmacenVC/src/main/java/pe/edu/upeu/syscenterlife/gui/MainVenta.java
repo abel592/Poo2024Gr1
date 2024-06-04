@@ -140,7 +140,7 @@ public class MainVenta extends javax.swing.JPanel {
             JButton btnDel = be.getCellEditorValue().buttons.get(0);
             btnDel.addActionListener((ActionEvent e) -> {
                 int row = jTable1.convertRowIndexToModel(jTable1.getEditingRow());
-                Object o = jTable1.getModel().getValueAt(row, 2);
+                Object o = jTable1.getModel().getValueAt(row, 0);
                 System.out.println("dd:" + o.toString());
                 daoC.eliminarEntidad(Long.parseLong(String.valueOf(o)));
                 listarCarrito(dni);
