@@ -16,9 +16,12 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import lombok.Data;
 
 @Entity
+@Data
 public class Venta {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,8 +43,8 @@ private String numDoc;
 @JsonFormat(pattern = "yyyy-MM-dd")
 @Basic(optional = false)
 @Column(name = "fecha_gener")
-@Temporal(TemporalType.DATE)
-private LocalDate fechaGener;
+@Temporal(TemporalType.TIMESTAMP)
+private LocalDateTime fechaGener;
 @Basic(optional = false)
 @Column(name = "serie")
 private String serie;
