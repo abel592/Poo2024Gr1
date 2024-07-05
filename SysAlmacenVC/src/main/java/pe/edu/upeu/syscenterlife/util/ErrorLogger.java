@@ -1,4 +1,5 @@
 package pe.edu.upeu.syscenterlife.util;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,7 +28,7 @@ public class ErrorLogger {
             SimpleFormatter formatter = new SimpleFormatter();
             fileHandler.setFormatter(formatter);
         } catch (IOException exception) {
-// exception.printStackTrace();
+            // exception.printStackTrace();
             System.err.println("configure:" + exception.toString());
         }
         addCloseHandlersShutdownHook();

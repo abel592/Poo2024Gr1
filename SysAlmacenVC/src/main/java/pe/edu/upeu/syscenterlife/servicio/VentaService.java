@@ -24,6 +24,7 @@ public class VentaService {
 
     @Autowired
     VentaRepository repository;
+
     @Autowired
     private DataSource dataSource;
 
@@ -55,7 +56,7 @@ public class VentaService {
     public File getFile(String filex) {
         File newFolder = new File("jasper");
         String ruta = newFolder.getAbsolutePath();
-//CAMINO = Paths.get(ruta+"/"+"reporte1.jrxml");
+        //CAMINO = Paths.get(ruta+"/"+"reporte1.jrxml");
         Path CAMINO = Paths.get(ruta + "/" + filex);
         System.out.println("Llegasss Ruta 2:" + CAMINO.toFile().getAbsolutePath());
         return CAMINO.toFile();
@@ -63,23 +64,23 @@ public class VentaService {
 
     public void runReport1(Long idv) {
         try {
-// Verificar si la venta existe
+            // Verificar si la venta existe
             if (!repository.existsById(idv)) {
                 throw new IllegalArgumentException("La venta con id " + idv + " no existe");
             }
             HashMap<String, Object> param = new HashMap<>();
-// Obtener ruta de la imagen
+            // Obtener ruta de la imagen
             String imgen = getFile("logoupeu.png").getAbsolutePath();
-// Agregar parámetros
+            // Agregar parámetros
             param.put("idventa", idv);
             param.put("imagenurl", imgen);
-// Cargar el diseño del informe
+            // Cargar el diseño del informe
             JasperDesign jdesign = JRXmlLoader.load(getFile("comprobante.jrxml"));
             JasperReport jreport = JasperCompileManager.compileReport(jdesign);
-// Llenar el informe
+            // Llenar el informe
             JasperPrint jprint = JasperFillManager.fillReport(jreport, param,
                     dataSource.getConnection());
-// Mostrar el informe
+            // Mostrar el informe
             JasperViewer.viewReport(jprint, false);
         } catch (JRException ex) {
             System.out.println("Error:\n" + ex.getLocalizedMessage());
@@ -87,4 +88,5 @@ public class VentaService {
             System.out.println("Error inesperado:\n" + e.getLocalizedMessage());
         }
     }
+
 }

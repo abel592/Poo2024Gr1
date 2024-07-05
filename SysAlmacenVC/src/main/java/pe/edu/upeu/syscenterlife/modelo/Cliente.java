@@ -15,23 +15,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString
-
+@Data
 public class Cliente {
 
     @Id
-    @Basic(optional=false)
+    @Basic(optional = false)
     String dniruc;
-    @Basic(optional=false)
+    @Basic(optional = false)
     String nombrers;
     String documento;
     String direccion;
-   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-@JoinColumn(name = "dniruc", referencedColumnName = "dniruc")
-@JsonIgnoreProperties({"dniruc"})public List<Venta> ventas;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "dniruc", referencedColumnName = "dniruc")
+    @JsonIgnoreProperties({"dniruc"})
+    public List<Venta> ventas;
 }

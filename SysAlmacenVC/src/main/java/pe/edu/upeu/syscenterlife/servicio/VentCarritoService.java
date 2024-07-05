@@ -38,7 +38,7 @@ public class VentCarritoService {
         return repository.findById(id).orElse(null);
     }
 
-    //buscar por dni/ruc
+    // Buscar por DNI/RUC
     public List<VentCarrito> listaCarritoCliente(String dni) {
         return repository.listaCarritoCliente(dni);
     }
@@ -47,4 +47,5 @@ public class VentCarritoService {
     public void deleteCarAll(String dniruc) {
         this.repository.deleteByDniruc(dniruc);
     }
+
 }

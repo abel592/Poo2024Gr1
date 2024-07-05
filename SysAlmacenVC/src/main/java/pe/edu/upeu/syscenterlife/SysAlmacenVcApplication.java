@@ -14,7 +14,6 @@ public class SysAlmacenVcApplication {
 
     public static void main(String[] args) {
         //SpringApplication.run(SysAlmacenVcApplication.class, args);
-        //SpringApplication.run(SysAlmacenVcApplication.class, args);
         ConfigurableApplicationContext ctx = new SpringApplicationBuilder(SysAlmacenVcApplication.class)
                 .headless(false)
                 .web(WebApplicationType.NONE)
@@ -26,9 +25,8 @@ public class SysAlmacenVcApplication {
             Login ex = ctx.getBean(Login.class);
             ex.setContexto(ctx);
             ex.setVisible(true);
-
         });
-              
 
     }
+
 }

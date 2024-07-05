@@ -10,13 +10,13 @@ import pe.edu.upeu.syscenterlife.modelo.Producto;
 import pe.edu.upeu.syscenterlife.repositorio.ProductoRepository;
 import pe.edu.upeu.syscenterlife.util.ErrorLogger;
 
+
 @Service
 public class ProductoService {
 
     @Autowired
     ProductoRepository repository;
     ErrorLogger log=new ErrorLogger("ProductoService");
-
     // Crear
     public Producto guardarEntidad(Producto producto) {
         return repository.save(producto);

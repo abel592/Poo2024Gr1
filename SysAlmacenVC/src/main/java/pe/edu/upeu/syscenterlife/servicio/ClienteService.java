@@ -16,9 +16,9 @@ public class ClienteService {
     @Autowired
     ClienteRepository repository;
     
-    ErrorLogger  log = new ErrorLogger("ClienteService"); 
+    ErrorLogger log=new ErrorLogger("ClienteService");
 
-
+    //C
     public Cliente guardarEntidad(Cliente cliente) {
         return repository.save(cliente);
     }
@@ -28,18 +28,18 @@ public class ClienteService {
         return repository.findAll();
     }
 
-    //
-    public Cliente updateEntidad(Cliente cliente) {
+    //U
+    public Cliente actualizarEntidad(Cliente cliente) {
         return repository.save(cliente);
     }
 
     //D
-    public void eliminarRegEntidad(String dniruc) {
+    public void eliminarEntidad(String dniruc) {
         repository.delete(repository.findById(dniruc).get());
     }
 
-    //Buscar
-    public Cliente buscarCliente(String dniruc) {
+    //B
+    public Cliente buscarEntidad(String dniruc) {
         return repository.findById(dniruc).get();
     }
 
@@ -57,7 +57,7 @@ public class ClienteService {
         } catch (Exception e) {
             log.log(Level.SEVERE, "create", e);
         }
-
         return listarclientes;
     }
+
 }

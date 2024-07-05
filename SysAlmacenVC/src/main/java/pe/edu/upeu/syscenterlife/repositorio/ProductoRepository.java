@@ -9,6 +9,8 @@ import pe.edu.upeu.syscenterlife.modelo.Producto;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
+
     @Query(value = "SELECT p.* FROM Producto p WHERE p.nombre like :filter", nativeQuery = true)
-List<Producto> listAutoCompletProducto(@Param("filter") String filter);
+    List<Producto> listAutoCompletProducto(@Param("filter") String filter);
+
 }

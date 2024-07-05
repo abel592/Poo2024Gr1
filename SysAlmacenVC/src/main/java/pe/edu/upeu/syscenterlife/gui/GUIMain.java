@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package pe.edu.upeu.syscenterlife.gui;
 
 import java.awt.BorderLayout;
@@ -143,7 +147,7 @@ public class GUIMain extends JFrame {
                 jtpane.removeAll();
                 //MainCliente mc = new MainCliente();
                 MainCliente mc = ctx.getBean(MainCliente.class);
-                mc.setContexto(ctx);
+                mc.setContext(ctx);
                 mc.setPreferredSize(new Dimension(1024, 600));
                 scrollPane = new JScrollPane(mc);
                 scrollPane.setHorizontalScrollBarPolicy(
@@ -167,7 +171,7 @@ public class GUIMain extends JFrame {
                         JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
                 scrollPane.setVerticalScrollBarPolicy(
                         JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-                jtpane.add(scrollPane, "R. Venta");
+                jtpane.add(scrollPane, "R.Venta");
                 contai.add(BorderLayout.CENTER, jtpane);
                 contai.validate();
                 contai.repaint();
@@ -177,4 +181,5 @@ public class GUIMain extends JFrame {
             }
         }
     }
+
 }

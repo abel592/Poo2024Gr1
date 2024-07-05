@@ -17,16 +17,17 @@ import lombok.Data;
 @Data
 @Entity
 public class Marca {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Basic(optional = false)
-@Column(name = "id_marca")
-private Integer idMarca;
-@Basic(optional = false)
-@Column(name = "nombre")
-private String nombre;
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-@JoinColumn(name = "id_marca", referencedColumnName = "id_marca")
-@JsonIgnoreProperties({"idMarca"})
-public List<Producto> productos;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id_marca")
+    private Integer idMarca;
+    @Basic(optional = false)
+    @Column(name = "nombre")
+    private String nombre;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_marca", referencedColumnName = "id_marca")
+    @JsonIgnoreProperties({"idMarca"})
+    public List<Producto> productos;
 }

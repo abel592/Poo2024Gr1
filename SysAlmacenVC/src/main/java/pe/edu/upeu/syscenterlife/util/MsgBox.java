@@ -1,8 +1,6 @@
 package pe.edu.upeu.syscenterlife.util;
 
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * Clase Principal para manejo de alertas
@@ -38,6 +36,7 @@ public class MsgBox {
     }
 
     public static void main(String[] args) {
-        MsgBox msgBox = new MsgBox("Mensaje", JOptionPane.ERROR_MESSAGE, "img/secrecy-icon.png");
+        //MsgBox msgBox = new MsgBox("Mensaje", JOptionPane.ERROR_MESSAGE, "img/secrecy-icon.png");
+        MsgBox msgBox = new MsgBox("Hola manito", JOptionPane.INFORMATION_MESSAGE, "img/store.png");
     }
 }
